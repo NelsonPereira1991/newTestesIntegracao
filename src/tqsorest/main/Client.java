@@ -1,12 +1,12 @@
 package tqsorest.main;
 
 public class Client {
-	
 	//Class Members
 	private boolean is_on_waiting_room;
 	private boolean is_served;
 	private boolean has_paid;
 	
+	// Methods
 	public Client() {
 		is_on_waiting_room = false;
 		is_served = false;
@@ -36,6 +36,4 @@ public class Client {
 	public void set_hasPaid(boolean has_paid) {
 		this.has_paid = has_paid;
 	}
-	
-	
 }

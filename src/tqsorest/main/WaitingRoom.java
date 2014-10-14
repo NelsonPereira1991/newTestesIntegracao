@@ -3,10 +3,10 @@ package tqsorest.main;
 import java.util.PriorityQueue;
 
 public class WaitingRoom {
-	
 	// Class Members
 	private PriorityQueue<Client> m_clients;
 	
+	// Methods
 	public WaitingRoom() {
 		m_clients = new PriorityQueue<Client>();
 	}
@@ -35,5 +35,4 @@ public class WaitingRoom {
 	public int getClientsNumber() {
 		return m_clients.size();
 	}
-
 }

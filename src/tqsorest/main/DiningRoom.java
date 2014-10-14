@@ -8,6 +8,7 @@ public class DiningRoom {
 	private WaitingRoom m_waiting_room;
 	private ArrayList<Client> m_clients_in_progress;
 	
+	// Methods
 	public DiningRoom(WaitingRoom waitingRoom) {
 		this(10, waitingRoom);
 	}
@@ -57,8 +58,6 @@ public class DiningRoom {
 			return false;
 		}
 		
-		addClient(clientToServe);
-		
-		return true;
+		return addClient(clientToServe);
 	}
 }
