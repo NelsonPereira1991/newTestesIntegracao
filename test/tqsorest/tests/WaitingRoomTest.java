@@ -38,7 +38,6 @@ public class WaitingRoomTest extends TestCase {
 	
 	@Test
 	public void testServeClient() {
-		waitingRoom.clientArrive(client3);
 		assertEquals("Test Serve Client Method", waitingRoom.getClientsNumber(), 2);
 	}
 }

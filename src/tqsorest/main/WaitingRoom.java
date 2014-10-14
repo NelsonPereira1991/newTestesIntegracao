@@ -1,21 +1,21 @@
 package tqsorest.main;
 
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 
 public class WaitingRoom {
 	// Class Members
-	private PriorityQueue<Client> m_clients;
+	private LinkedList<Client> m_clients;
 	
 	// Methods
 	public WaitingRoom() {
-		m_clients = new PriorityQueue<Client>();
+		m_clients = new LinkedList<Client>();
 	}
 
-	public PriorityQueue<Client> get_clients() {
+	public LinkedList<Client> get_clients() {
 		return m_clients;
 	}
 
-	public void set_clients(PriorityQueue<Client> m_clients) {
+	public void set_clients(LinkedList<Client> m_clients) {
 		this.m_clients = m_clients;
 	}
 	
