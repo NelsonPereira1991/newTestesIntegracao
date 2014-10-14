@@ -13,6 +13,14 @@ public class Kitchen {
 	public Kitchen(EnumMap<Ingredient.IngredientType, Integer> stock) {
 		m_stock = stock;
 	}
+
+	public static EnumMap<Ingredient.IngredientType, Integer> get_stock() {
+		return m_stock;
+	}
+
+	public static void set_stock(EnumMap<Ingredient.IngredientType, Integer> stock) {
+		Kitchen.m_stock = stock;
+	}
 	
 	public boolean checkOrder(DishType dishType) {
 		ArrayList<Ingredient.IngredientType> ingredients = Dish.getDishIngredientsForAGivenType(dishType);
@@ -27,14 +35,7 @@ public class Kitchen {
 	public ArrayList<Dish> makeOrder(DishType dishType, int quantity) {
 		ArrayList<Dish> dishesToReturn = new ArrayList<Dish>();
 		checkOrder(dishType);
+		dishesToReturn.add(new Dish(DishType.MEAT_WATER));
 		return dishesToReturn;
-	}
-
-	public static EnumMap<Ingredient.IngredientType, Integer> get_stock() {
-		return m_stock;
-	}
-
-	public static void set_stock(EnumMap<Ingredient.IngredientType, Integer> stock) {
-		Kitchen.m_stock = stock;
 	}
 }

@@ -71,4 +71,15 @@ public class Dish {
 		}
 		return dishIngredientsTypeToReturn;
 	}
+	
+	@Override
+	public boolean equals(Object other){
+	    if (other == null) return false;
+	    if (other == this) return true;
+	    
+	    if (this.m_type == ((Dish)other).get_type())
+	    	return true;
+	    
+	    return false;
+	}
 }
