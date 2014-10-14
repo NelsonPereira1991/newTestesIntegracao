@@ -1,4 +1,4 @@
-package tqsorest.tests;
+package tqsorest.tests.unit;
 
 import java.util.ArrayList;
 

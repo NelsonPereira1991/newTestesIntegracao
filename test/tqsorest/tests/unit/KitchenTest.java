@@ -1,4 +1,4 @@
-package tqsorest.tests;
+package tqsorest.tests.unit;
 
 import static org.junit.Assert.*;
 
@@ -46,5 +46,4 @@ public class KitchenTest {
 		dishesOfOrder.add(new Dish(DishType.MEAT_WATER));
 		assertArrayEquals(dishesOfOrder.toArray(), kitchen.makeOrder(DishType.MEAT_WATER, 1).toArray());
 	}
-
 }
