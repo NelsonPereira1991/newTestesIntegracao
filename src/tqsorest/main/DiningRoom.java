@@ -43,7 +43,7 @@ public class DiningRoom {
 		this.m_clients_in_progress = m_clients_in_progress;
 	}
 	
-	private boolean addClient(Client clientToAdd) {
+	public boolean addClient(Client clientToAdd) {
 		if ( m_clients_in_progress.size() < m_max_slots ) {
 			m_clients_in_progress.add(clientToAdd);
 			return true;
@@ -51,13 +51,17 @@ public class DiningRoom {
 		return false;
 	}
 	
+	public boolean removeClient(Client clientToRemove) {
+		return m_clients_in_progress.remove(clientToRemove);
+	}
+	
 	public boolean pickAClientFromWaitingRoom() {
-		Client clientToServe = m_waiting_room.serveClient();
+		return true;
+	}
+	
+	public boolean endAClientServiceInWaintingRoom(Client clientToEndService) {
+		clientToEndService.set_isOnWaitingRoom(false);
 		
-		if (clientToServe == null) {
-			return false;
-		}
-		
-		return addClient(clientToServe);
+		return removeClient(clientToEndService);
 	}
 }

@@ -23,17 +23,19 @@ public class DiningRoomTest {
 		client1 = new Client();
 		client2 = new Client();
 		client3 = new Client();
-		
-		waitingRoom.clientArrive(client1);
-		waitingRoom.clientArrive(client2);
-		waitingRoom.clientArrive(client3);
 	}
 	
 	@Test
-	public void testPickAClientFromWaitingRoom() {
+	public void testEndAClientServiceInWaintingRoom() {
+		diningRoom.addClient(client1);
+		diningRoom.addClient(client2);
+		assertEquals(2, diningRoom.get_clientsInProgress().size());
+		
+		diningRoom.removeClient(client2);
+		assertEquals(1, diningRoom.get_clientsInProgress().size());
+		
+		diningRoom.endAClientServiceInWaintingRoom(client1);
 		assertEquals(0, diningRoom.get_clientsInProgress().size());
-		diningRoom.pickAClientFromWaitingRoom();
-		assertEquals("Test Pick A Client From Waiting Room Method", 1, diningRoom.get_clientsInProgress().size());
 	}
 }
 
