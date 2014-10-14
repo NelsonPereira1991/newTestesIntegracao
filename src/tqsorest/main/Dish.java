@@ -46,7 +46,7 @@ public class Dish {
 	
 	public void calculatePrice() {
 		boolean[] dishIngredients = menu[m_type.ordinal()];
-		for (int i=0; i<DishType.values().length; i++) {
+		for (int i=0; i<dishIngredients.length; i++) {
 			if ( dishIngredients[i] ) {
 				m_price += Ingredient.get_priceTable()[i];
 			}

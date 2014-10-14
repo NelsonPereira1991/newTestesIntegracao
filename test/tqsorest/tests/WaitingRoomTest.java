@@ -1,20 +1,20 @@
 package tqsorest.tests;
 
-import junit.framework.TestCase;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Before;
 
 import tqsorest.main.Client;
 import tqsorest.main.WaitingRoom;
 
-public class WaitingRoomTest extends TestCase {
+public class WaitingRoomTest {
 	// Test member data
 	public WaitingRoom waitingRoom;
 	public Client client1;
 	public Client client2;
 	public Client client3;
 	
-	@Override
+	@Before
 	public void setUp() {
 		waitingRoom = new WaitingRoom();
 		client1 = new Client();
@@ -27,17 +27,18 @@ public class WaitingRoomTest extends TestCase {
 	
 	@Test
 	public void testClientQueueSize() {
-		assertEquals("Test Get Client Size Method", waitingRoom.getClientsNumber(),2);
+		assertEquals("Test Get Client Size Method", 2, waitingRoom.getClientsNumber());
 	}
 	
 	@Test
 	public void testClientArrive() {
 		waitingRoom.clientArrive(client3);
-		assertEquals("Test Client Arrive Method", waitingRoom.getClientsNumber(), 3);
+		assertEquals("Test Client Arrive Method", 3, waitingRoom.getClientsNumber());
 	}
 	
 	@Test
 	public void testServeClient() {
-		assertEquals("Test Serve Client Method", waitingRoom.getClientsNumber(), 2);
+		waitingRoom.serveClient();
+		assertEquals("Test Serve Client Method", 1, waitingRoom.getClientsNumber());
 	}
 }

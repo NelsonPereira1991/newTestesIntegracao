@@ -1,14 +1,14 @@
 package tqsorest.tests;
 
-import junit.framework.TestCase;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Before;
 
 import tqsorest.main.Client;
 import tqsorest.main.DiningRoom;
 import tqsorest.main.WaitingRoom;
 
-public class DiningRoomTest extends TestCase {
+public class DiningRoomTest {
 	// Test member data
 	public WaitingRoom waitingRoom;
 	public DiningRoom diningRoom;
@@ -16,7 +16,7 @@ public class DiningRoomTest extends TestCase {
 	public Client client2;
 	public Client client3;
 	
-	@Override
+	@Before
 	public void setUp() {
 		waitingRoom = new WaitingRoom();
 		diningRoom = new DiningRoom(waitingRoom);
@@ -31,9 +31,9 @@ public class DiningRoomTest extends TestCase {
 	
 	@Test
 	public void testPickAClientFromWaitingRoom() {
-		assertEquals(diningRoom.get_clientsInProgress().size(),0);
+		assertEquals(0, diningRoom.get_clientsInProgress().size());
 		diningRoom.pickAClientFromWaitingRoom();
-		assertEquals("Test Pick A Client From Waiting Room Method", diningRoom.get_clientsInProgress().size(), 1);
+		assertEquals("Test Pick A Client From Waiting Room Method", 1, diningRoom.get_clientsInProgress().size());
 	}
 }
 
