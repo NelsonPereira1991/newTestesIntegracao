@@ -1,6 +1,7 @@
 package tqsorest.main;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class DiningRoom {
 	// Class Members
@@ -57,7 +58,8 @@ public class DiningRoom {
 	}
 	
 	public boolean pickAClientFromWaitingRoom() {
-		return true;
+		//return true;
+		return false;
 	}
 	
 	public boolean endAClientServiceInWaintingRoom(Client clientToEndService) {
