@@ -1,15 +1,13 @@
 package tqsorest.tests.unit;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
 import java.util.EnumMap;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import tqsorest.main.Dish.DishType;
-import tqsorest.main.Dish;
 import tqsorest.main.Ingredient;
 import tqsorest.main.Ingredient.IngredientType;
 import tqsorest.main.Kitchen;
@@ -38,12 +36,5 @@ public class KitchenTest {
 	@Test
 	public void testCheckOrder() {
 		assertTrue(kitchen.checkOrder(DishType.MEAT_WATER));
-	}
-	
-	@Test
-	public void testMakeOrder() {
-		ArrayList<Dish> dishesOfOrder = new ArrayList<Dish>();
-		dishesOfOrder.add(new Dish(DishType.MEAT_WATER));
-		assertArrayEquals(dishesOfOrder.toArray(), kitchen.makeOrder(DishType.MEAT_WATER, 1).toArray());
 	}
 }
