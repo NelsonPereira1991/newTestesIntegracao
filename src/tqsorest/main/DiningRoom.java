@@ -10,7 +10,7 @@ public class DiningRoom {
 	
 	// Methods
 	public DiningRoom(WaitingRoom waitingRoom) {
-		this(10, waitingRoom);
+		this(50, waitingRoom);
 	}
 	
 	public DiningRoom(int max_slots, WaitingRoom waitingRoom) {
@@ -43,7 +43,7 @@ public class DiningRoom {
 		this.m_clients_in_progress = m_clients_in_progress;
 	}
 	
-	public boolean addClient(Client clientToAdd) {
+	private boolean addClient(Client clientToAdd) {
 		if ( m_clients_in_progress.size() < m_max_slots ) {
 			m_clients_in_progress.add(clientToAdd);
 			return true;
