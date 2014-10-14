@@ -1,19 +1,20 @@
 package tqsorest.tests;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
 import org.junit.Test;
 
 import tqsorest.main.Client;
 import tqsorest.main.WaitingRoom;
 
-public class WaitingRoomTest {
+public class WaitingRoomTest extends TestCase {
 	// Test member data
 	public WaitingRoom waitingRoom;
 	public Client client1;
 	public Client client2;
 	public Client client3;
 	
+	@Override
 	public void setUp() {
 		waitingRoom = new WaitingRoom();
 		client1 = new Client();
