@@ -7,6 +7,7 @@ public class DiningRoom {
 	private int m_max_slots;
 	private WaitingRoom m_waiting_room;
 	private ArrayList<Client> m_clients_in_progress;
+	//stu
 	
 	// Methods
 	public DiningRoom(WaitingRoom waitingRoom) {
