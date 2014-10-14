@@ -6,7 +6,7 @@ public class Ingredient {
 		MEAT, FISH, SALT, OLIVE, PEPPER, GARLIC, WATER, BEER, COKE
 	};
 	
-	private static double[] price_table = {3.0, 4.0, 0.1, 0.3, 0.1, 0.1, 1.2, 1, 1.2};
+	private static double[] m_price_table = {3.0, 4.0, 0.1, 0.3, 0.1, 0.1, 1.2, 1, 1.2};
 	
 	private double m_price;
 	private IngredientType m_type;
@@ -14,7 +14,7 @@ public class Ingredient {
 	// Methods
 	public Ingredient(IngredientType type) {
 		m_type = type;
-		m_price = price_table[m_type.ordinal()];
+		m_price = m_price_table[m_type.ordinal()];
 	}
 
 	public double get_price() {
@@ -31,5 +31,13 @@ public class Ingredient {
 
 	public void set_type(IngredientType m_type) {
 		this.m_type = m_type;
+	}
+	
+	public static double[] get_priceTable() {
+		return m_price_table;
+	}
+	
+	public static void set_priceTable(double[] priceTable) {
+		m_price_table = priceTable;
 	}
 }
