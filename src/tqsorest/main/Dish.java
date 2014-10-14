@@ -9,6 +9,7 @@ public class Dish {
 		MEAT_WATER, MEAT_BEER, MEAT_COKE, FISH_WATER, FISH_BEER, FISH_COKE
 	};
 	
+	//  Menu Ingredients Order: MEAT, FISH, SALT, OLIVE, PEPPER, GARLIC, WATER, BEER, COKE => values of array between true or false
 	private static boolean[][] menu = new boolean[][] {
 		{true, false, true, true, true, false, true, false, false}, // MEAT WATER
 		{true, false, true, true, true, false, false, true, false}, // MEAT BEER
@@ -53,9 +54,13 @@ public class Dish {
 	}
 	
 	public ArrayList<Ingredient.IngredientType> getDishIngredientsType() {
+		return getDishIngredientsForAGivenType(m_type);
+	}
+	
+	public static ArrayList<Ingredient.IngredientType> getDishIngredientsForAGivenType(DishType type) {
 		ArrayList<Ingredient.IngredientType> dishIngredientsTypeToReturn = new ArrayList<Ingredient.IngredientType>();
-		for(int i=0; i<menu[m_type.ordinal()].length; i++) {
-			if ( menu[m_type.ordinal()][i] ) {
+		for(int i=0; i<menu[type.ordinal()].length; i++) {
+			if ( menu[type.ordinal()][i] ) {
 				
 				for (Ingredient.IngredientType ingredientType : Ingredient.IngredientType.values()) {
 					if (ingredientType.ordinal() == i) {
